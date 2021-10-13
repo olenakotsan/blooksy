@@ -1,0 +1,77 @@
+/*@mixin basicPadding($padding: 60px) {
+  padding-left: $padding;
+  padding-right: $padding;
+}*/
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body .initial {
+  height: 100vh;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff8e7), to(#ffffff));
+  background-image: linear-gradient(180deg, #fff8e7, #ffffff);
+}
+
+body .initial .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+body .initial .header .header_logo {
+  height: 40px;
+}
+
+body .initial .header .header_button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: #002293;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: bold;
+  padding: 10px 16px;
+  font-size: 14px;
+  height: 40px;
+}
+
+body .initial .header .header_button:hover {
+  background-color: #0043db;
+}
+
+body .initial div {
+  height: 1000px;
+}
+
+@media screen and (min-width: 980px) and (max-width: 1267px) {
+  header {
+    width: 940px;
+  }
+}
+
+@media screen and (min-width: 1268px) {
+  header {
+    width: 1136px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .header_button {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
