@@ -1,3 +1,15 @@
+@font-face {
+  font-family: Inter-Regular;
+  font-weight: 400;
+  src: url(/fonts/Inter-Regular.woff2) format("woff2"), url(/fonts/Inter-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: Inter-Semibold;
+  font-weight: 600;
+  src: url(/fonts/Inter-SemiBold.woff2) format("woff2"), url(/fonts/Inter-SemiBold.woff) format("woff");
+}
+
 /*@mixin basicPadding($padding: 60px) {
   padding-left: $padding;
   padding-right: $padding;
@@ -9,14 +21,14 @@ body {
   overflow-y: auto;
 }
 
-body .initial {
+.initial {
   height: 100vh;
   width: 100%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff8e7), to(#ffffff));
   background-image: linear-gradient(180deg, #fff8e7, #ffffff);
 }
 
-body .initial .header {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,28 +44,27 @@ body .initial .header {
   margin: 0 auto;
 }
 
-body .initial .header .header_logo {
+.header__logo {
   height: 40px;
 }
 
-body .initial .header .header_button {
+.header__button {
   cursor: pointer;
   border: none;
   border-radius: 4px;
   background-color: #002293;
   color: #ffffff;
-  font-style: normal;
-  font-weight: bold;
+  font-family: Inter-Semibold;
   padding: 10px 16px;
   font-size: 14px;
   height: 40px;
 }
 
-body .initial .header .header_button:hover {
+.header__button:hover {
   background-color: #0043db;
 }
 
-body .initial div {
+div {
   height: 1000px;
 }
 
@@ -70,7 +81,7 @@ body .initial div {
 }
 
 @media screen and (max-width: 979px) {
-  .header_button {
+  .header__button {
     display: none;
   }
 }
