@@ -10,10 +10,6 @@
   src: url(/fonts/Inter-SemiBold.woff2) format("woff2"), url(/fonts/Inter-SemiBold.woff) format("woff");
 }
 
-/*@mixin basicPadding($padding: 60px) {
-  padding-left: $padding;
-  padding-right: $padding;
-}*/
 body {
   margin: 0;
   padding: 0;
@@ -44,11 +40,11 @@ body {
   margin: 0 auto;
 }
 
-.header__logo {
+div .header__logo {
   height: 40px;
 }
 
-.header__button {
+div .header__button {
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -60,12 +56,41 @@ body {
   height: 40px;
 }
 
-.header__button:hover {
+div .header__button:hover {
   background-color: #0043db;
 }
 
-div {
+div .header__button--transparent {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #002293;
+  font-family: Inter-Semibold;
+  text-decoration: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  height: 40px;
+  margin-right: 40px;
+}
+
+div .header__button--transparent:hover {
+  color: #0043db;
+}
+
+.test-block {
   height: 1000px;
+}
+
+@media screen and (max-width: 979px) {
+  .header__button,
+  .header__button--transparent {
+    display: none;
+  }
+  .header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 @media screen and (min-width: 980px) and (max-width: 1267px) {
@@ -77,12 +102,6 @@ div {
 @media screen and (min-width: 1268px) {
   header {
     width: 1136px;
-  }
-}
-
-@media screen and (max-width: 979px) {
-  .header__button {
-    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

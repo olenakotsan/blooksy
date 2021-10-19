@@ -11,19 +11,21 @@ $basicGrey: #8d9ba4;
 @font-face {
   font-family: Inter-Regular;
   font-weight: 400;
-  src: url(/fonts/Inter-Regular.woff2) format("woff2"), url(/fonts/Inter-Regular.woff) format("woff");
+  src: url(/fonts/Inter-Regular.woff2) format("woff2"),
+    url(/fonts/Inter-Regular.woff) format("woff");
 }
 
 @font-face {
   font-family: Inter-Semibold;
   font-weight: 600;
-  src: url(/fonts/Inter-SemiBold.woff2) format("woff2"), url(/fonts/Inter-SemiBold.woff) format("woff");
+  src: url(/fonts/Inter-SemiBold.woff2) format("woff2"),
+    url(/fonts/Inter-SemiBold.woff) format("woff");
 }
 
-/*@mixin basicPadding($padding: 60px) {
-  padding-left: $padding;
-  padding-right: $padding;
-}*/
+@mixin basicPadding {
+  padding-left: 25px;
+  padding-right: 25px;
+}
 
 @mixin basicButton {
   cursor: pointer;
@@ -34,6 +36,19 @@ $basicGrey: #8d9ba4;
   font-family: Inter-Semibold;
   &:hover {
     background-color: $hoverBlue;
+  }
+}
+
+@mixin transparentButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: $primaryBlue;
+  font-family: Inter-Semibold;
+  text-decoration: none;
+  &:hover {
+    color: $hoverBlue;
   }
 }
 
@@ -59,20 +74,38 @@ body {
   height: 60px;
   margin: 0 auto;
 
-  &__logo {
+  div &__logo {
     height: 40px;
   }
 
-  &__button {
+  div &__button {
     @include basicButton;
     padding: 10px 16px;
     font-size: 14px;
     height: 40px;
   }
+
+  div &__button--transparent {
+    @include transparentButton();
+    padding: 10px 16px;
+    font-size: 14px;
+    height: 40px;
+    margin-right: 40px;
+  }
 }
 
-div {
+.test-block {
   height: 1000px;
+}
+
+@media screen and (max-width: 979px) {
+  .header__button,
+  .header__button--transparent {
+    display: none;
+  }
+  .header {
+    @include basicPadding();
+  }
 }
 
 @media screen and (min-width: 980px) and (max-width: 1267px) {
@@ -84,11 +117,5 @@ div {
 @media screen and (min-width: 1268px) {
   header {
     width: 1136px;
-  }
-}
-
-@media screen and (max-width: 979px) {
-  .header__button {
-    display: none;
   }
 }
