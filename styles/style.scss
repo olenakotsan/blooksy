@@ -27,29 +27,37 @@ $basicGrey: #8d9ba4;
   padding-right: 25px;
 }
 
-@mixin primaryButton {
+@mixin basicButton {
   cursor: pointer;
   border: none;
   border-radius: 4px;
+  font-family: Inter-Semibold;
+}
+
+@mixin primaryButton {
   background-color: $primaryBlue;
   color: $basicWhite;
-  font-family: Inter-Semibold;
   &:hover {
     background-color: $hoverBlue;
   }
 }
 
 @mixin transparentButton {
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
   background-color: transparent;
   color: $primaryBlue;
-  font-family: Inter-Semibold;
-  text-decoration: none;
   &:hover {
     color: $hoverBlue;
   }
+}
+
+.transparent-btn {
+  @include basicButton();
+  @include transparentButton();
+}
+
+.primary-btn {
+  @include basicButton();
+  @include primaryButton();
 }
 
 body {
@@ -84,18 +92,12 @@ body {
   }
 
   &__button {
-    @include primaryButton;
     padding: 10px 16px;
     font-size: 14px;
     height: 40px;
-  }
-
-  &__button--transparent {
-    @include transparentButton();
-    padding: 10px 16px;
-    font-size: 14px;
-    height: 40px;
-    margin-right: 40px;
+    &:first-child {
+      margin-right: 40px;
+    }
   }
 }
 
@@ -104,8 +106,7 @@ body {
 }
 
 @media screen and (max-width: 979px) {
-  .header__button,
-  .header__button--transparent {
+  .header__button {
     display: none;
   }
   .header {

@@ -10,6 +10,32 @@
   src: url(/fonts/Inter-SemiBold.woff2) format("woff2"), url(/fonts/Inter-SemiBold.woff) format("woff");
 }
 
+.transparent-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-family: Inter-Semibold;
+  background-color: transparent;
+  color: #002293;
+}
+
+.transparent-btn:hover {
+  color: #0043db;
+}
+
+.primary-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-family: Inter-Semibold;
+  background-color: #002293;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background-color: #0043db;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -57,37 +83,13 @@ body {
 }
 
 .header__button {
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  background-color: #002293;
-  color: #ffffff;
-  font-family: Inter-Semibold;
   padding: 10px 16px;
   font-size: 14px;
   height: 40px;
 }
 
-.header__button:hover {
-  background-color: #0043db;
-}
-
-.header__button--transparent {
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  background-color: transparent;
-  color: #002293;
-  font-family: Inter-Semibold;
-  text-decoration: none;
-  padding: 10px 16px;
-  font-size: 14px;
-  height: 40px;
+.header__button:first-child {
   margin-right: 40px;
-}
-
-.header__button--transparent:hover {
-  color: #0043db;
 }
 
 .test-block {
@@ -95,8 +97,7 @@ body {
 }
 
 @media screen and (max-width: 979px) {
-  .header__button,
-  .header__button--transparent {
+  .header__button {
     display: none;
   }
   .header {
