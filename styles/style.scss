@@ -27,7 +27,7 @@ $basicGrey: #8d9ba4;
   padding-right: 25px;
 }
 
-@mixin basicButton {
+@mixin primaryButton {
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -69,23 +69,25 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
   height: 60px;
   margin: 0 auto;
 
-  div &__logo {
+  &__logo {
     height: 40px;
   }
 
-  div &__button {
-    @include basicButton;
+  &__button {
+    @include primaryButton;
     padding: 10px 16px;
     font-size: 14px;
     height: 40px;
   }
 
-  div &__button--transparent {
+  &__button--transparent {
     @include transparentButton();
     padding: 10px 16px;
     font-size: 14px;
