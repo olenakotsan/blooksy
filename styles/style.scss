@@ -118,10 +118,16 @@ body {
   header {
     width: 940px;
   }
+  .header__menu {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1268px) {
   header {
     width: 1136px;
+  }
+  .header__menu {
+    display: none;
   }
 }
