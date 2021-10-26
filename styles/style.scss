@@ -27,6 +27,12 @@ $basicGrey: #8d9ba4;
   padding-right: 25px;
 }
 
+@mixin centerItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin basicButton {
   cursor: pointer;
   border: none;
@@ -86,9 +92,7 @@ body {
 
   &__logo {
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include centerItem();
   }
 
   &__button {
@@ -98,6 +102,11 @@ body {
     &:first-child {
       margin-right: 40px;
     }
+  }
+
+  &__menu {
+    width: 18px;
+    @include centerItem();
   }
 }
 
