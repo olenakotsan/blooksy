@@ -86,6 +86,7 @@ body {
   padding: 10px 16px;
   font-size: 14px;
   height: 40px;
+  text-transform: uppercase;
 }
 
 .header__button:first-child {
