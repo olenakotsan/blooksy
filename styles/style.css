@@ -106,6 +106,22 @@ body {
           align-items: center;
 }
 
+.initial-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+img {
+  height: 460px;
+}
+
 .test-block {
   height: 1000px;
 }
@@ -114,14 +130,16 @@ body {
   .header__button {
     display: none;
   }
-  .header {
+  .header,
+  .initial-block {
     padding-left: 25px;
     padding-right: 25px;
   }
 }
 
 @media screen and (min-width: 980px) and (max-width: 1267px) {
-  header {
+  .header,
+  .initial-block {
     width: 940px;
   }
   .header__menu {
@@ -130,7 +148,8 @@ body {
 }
 
 @media screen and (min-width: 1268px) {
-  header {
+  .header,
+  .initial-block {
     width: 1136px;
   }
   .header__menu {
