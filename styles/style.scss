@@ -101,16 +101,20 @@ body {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   position: sticky;
   top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
   height: 60px;
-  margin: 0 auto;
   background-color: $basicWhite;
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    height: 100%;
+  }
 
   &__logo {
     height: 40px;
@@ -172,14 +176,14 @@ body {
   .header__button {
     display: none;
   }
-  .header,
+  .header-wrapper,
   .initial__content-wrapper {
     @include basicPadding();
   }
 }
 
 @media screen and (min-width: 980px) and (max-width: 1267px) {
-  .header,
+  .header-wrapper,
   .initial__content-wrapper {
     width: 940px;
   }
@@ -189,7 +193,7 @@ body {
 }
 
 @media screen and (min-width: 1268px) {
-  .header,
+  .header-wrapper,
   .initial__content-wrapper {
     width: 1136px;
   }
