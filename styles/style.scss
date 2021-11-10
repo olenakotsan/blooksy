@@ -151,7 +151,8 @@ body {
     margin: 0 auto;
   }
 
-  &__content {
+  &__content,
+  &__image img {
     width: 560px;
   }
 
@@ -162,10 +163,6 @@ body {
     margin-top: 24px;
     margin-bottom: 16px;
   }
-
-  &__image img {
-    height: 560px;
-  }
 }
 
 .test-block {
@@ -173,6 +170,26 @@ body {
 }
 
 @media screen and (max-width: 979px) {
+  .initial {
+    height: 800px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    &__content {
+      width: 688px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    &__button {
+      font-size: 16px;
+    }
+    &__image {
+      margin: 0 auto;
+    }
+    &__image img {
+      width: 516px;
+    }
+  }
   .header__button {
     display: none;
   }
@@ -183,6 +200,10 @@ body {
 }
 
 @media screen and (min-width: 980px) and (max-width: 1267px) {
+  .initial__content,
+  .initial__image img {
+    width: 460px;
+  }
   .header-wrapper,
   .initial__content-wrapper {
     width: 940px;
