@@ -88,6 +88,10 @@ $basicGrey: #8d9ba4;
   font-size: 14px;
 }
 
+.container {
+  max-width: 1136px;
+}
+
 p,
 h1 {
   @include cleanMargin();
@@ -124,7 +128,7 @@ body {
   &__button {
     padding: 10px 16px;
     font-size: 14px;
-    height: 40px;
+    line-height: 20px;
     text-transform: uppercase;
     &:first-child {
       margin-right: 40px;
@@ -138,7 +142,6 @@ body {
 }
 
 .initial {
-  height: calc(100vh - 80px);
   width: 100%;
   background-image: linear-gradient(180deg, $backgroundYellow, $basicWhite);
   display: flex;
@@ -152,14 +155,14 @@ body {
   }
 
   &__content,
-  &__image img {
+  &__image {
     width: 560px;
   }
 
   &__button {
     padding: 16px 24px;
     font-size: 18px;
-    height: 60px;
+    line-height: 28px;
     margin-top: 24px;
     margin-bottom: 16px;
   }
@@ -169,39 +172,57 @@ body {
   height: 1000px;
 }
 
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 467px) {
   .initial {
-    height: 800px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    &__text {
+      font-size: 40px;
+      line-height: 48px;
+    }
+    &__button {
+      width: 95%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .header {
+    &__button {
+      display: none;
+    }
+    &-wrapper {
+      @include basicPadding();
+    }
+  }
+  .initial {
+    padding-top: 100px;
+    padding-bottom: 100px;
 
     &__content {
-      width: 688px;
+      width: 95%;
       text-align: center;
       margin: 0 auto;
     }
     &__button {
       font-size: 16px;
     }
+    &__image-wrapper {
+      @include flexCenter();
+    }
     &__image {
-      margin: 0 auto;
+      width: 70%;
     }
-    &__image img {
-      width: 516px;
+    &__content-wrapper,
+    &__image-wrapper {
+      max-width: 688px;
     }
-  }
-  .header__button {
-    display: none;
-  }
-  .header-wrapper,
-  .initial__content-wrapper {
-    @include basicPadding();
   }
 }
 
 @media screen and (min-width: 980px) and (max-width: 1267px) {
   .initial__content,
-  .initial__image img {
+  .initial__image {
     width: 460px;
   }
   .header-wrapper,
@@ -211,14 +232,16 @@ body {
   .header__menu {
     display: none;
   }
+  .initial {
+    min-height: calc(100vh - 80px);
+  }
 }
 
 @media screen and (min-width: 1268px) {
-  .header-wrapper,
-  .initial__content-wrapper {
-    width: 1136px;
-  }
   .header__menu {
     display: none;
+  }
+  .initial {
+    min-height: calc(100vh - 80px);
   }
 }
