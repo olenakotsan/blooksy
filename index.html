@@ -52,7 +52,7 @@
                 <button class="header__button transparent-btn" type="button">log in</button>
                 <button class="header__button primary-btn" type="button">sign up</button>
             </div>
-            <div class="header__menu">
+            <div class="header__menu" id="header__menu">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 12H21" stroke="#111111" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -65,7 +65,12 @@
         </div>
     </header>
 
-    <section class="initial">
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="menu-btn transparent-btn" type="button">log in</button>
+        <button class="menu-btn primary-btn" type="button">sign up</button>
+    </div>
+
+    <section class="initial" id="initial">
         <div class="initial__content-wrapper container">
             <div class="initial__content">
                 <div>
@@ -81,8 +86,38 @@
         </div>
     </section>
 
+    <section class="main">
+        <div class="main__content-wrapper container"></div>
+        <div class="main__content">
+            <div>
+                <h2 class="main__text heading-txt">From blank page to bestseller in four simple steps.</h2>
+                <p class="main__text basic-txt">Follow our shockingly simple four-step process and your book will be
+                    done in no time.</p>
+            </div>
+        </div>
+    </section>
+
     <div class="test-block"></div>
 
 </body>
+
+<script>
+    const menuBtn = document.getElementById('header__menu')
+    const mobileMenu = document.getElementById('mobile-menu')
+    const initialBlock = document.getElementById('initial')
+
+    menuBtn.addEventListener('click', () => {
+        if (mobileMenu.style.display = 'none') {
+            mobileMenu.style.display = 'block'
+            return
+        }
+
+        mobileMenu.style.display = 'none'
+    })
+
+    initialBlock.addEventListener('click', () => {
+        mobileMenu.style.display = 'none'
+    })
+</script>
 
 </html>
