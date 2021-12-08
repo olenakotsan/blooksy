@@ -63,12 +63,13 @@
                 </svg>
             </div>
         </div>
-    </header>
 
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="menu-btn transparent-btn" type="button">log in</button>
-        <button class="menu-btn primary-btn" type="button">sign up</button>
-    </div>
+        <div class="mobile-menu" id="mobile-menu" style="display: none">
+            <button class="menu-btn transparent-btn" type="button">log in</button>
+            <button class="menu-btn primary-btn" type="button">sign up</button>
+        </div>
+
+    </header>
 
     <section class="initial" id="initial">
         <div class="initial__content-wrapper container">
@@ -107,7 +108,7 @@
     const initialBlock = document.getElementById('initial')
 
     menuBtn.addEventListener('click', () => {
-        if (mobileMenu.style.display = 'none') {
+        if (mobileMenu.style.display === 'none') {
             mobileMenu.style.display = 'block'
             return
         }
