@@ -168,7 +168,6 @@ body {
 }
 
 .mobile-menu {
-  display: none;
   margin: 10px 20px 10px 20px;
   background-color: #ffffff;
 }
@@ -330,24 +329,64 @@ body {
   display: flex;
 }
 
-.main__content {
+.main-wrapper {
   text-align: center;
   margin: 0 auto;
   padding: 20px 112px 80px 112px;
 }
 
 @media screen and (max-width: 979px) {
-  .main__content {
+  .main-wrapper {
     width: 95%;
-    margin: 0 auto;
-  }
-  .main__content-wrapper {
-    max-width: 688px;
   }
 }
 
-.main h2 {
+.main__text {
   margin-bottom: 10px;
+}
+
+.main__steps-wrapper, .main__features-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  gap: 10px;
+}
+
+.main__step, .main__feature {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 270px;
+}
+
+@media screen and (max-width: 1267px) {
+  .main__step, .main__feature {
+    width: 160px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .main__step, .main__feature {
+    width: 116px;
+  }
+}
+
+.main .number {
+  top: 4px;
+  border-radius: 40px;
+  background-color: #ffd20a;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
 }
 
 .test-block {

@@ -266,20 +266,49 @@ body {
   background-image: $basicWhite;
   display: flex;
 
-  &__content {
+  &-wrapper {
     text-align: center;
     margin: 0 auto;
     padding: 20px 112px 80px 112px;
     @media screen and (max-width: 979px) {
       width: 95%;
-      margin: 0 auto;
-      &-wrapper {
-        max-width: 688px;
-      }
     }
   }
-  h2 {
+
+  &__text {
     margin-bottom: 10px;
+  }
+
+  &__steps-wrapper,
+  &__features-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    gap: 10px;
+  }
+
+  &__step,
+  &__feature {
+    align-self: flex-start;
+    flex-grow: 1;
+    width: 270px;
+    @media screen and (max-width: 1267px) {
+      width: 160px;
+    }
+    @media screen and (max-width: 979px) {
+      width: 116px;
+    }
+  }
+
+  .number {
+    top: 4px;
+    border-radius: 40px;
+    background-color: $primaryYellow;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
   }
 }
 
