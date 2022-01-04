@@ -28,6 +28,12 @@ $basicGrey: #8d9ba4;
   align-items: center;
 }
 
+@mixin flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin cleanMargin {
   margin: 0;
 }
@@ -65,18 +71,42 @@ $basicGrey: #8d9ba4;
   @include primaryButton();
 }
 
+.header-btn {
+  padding: 10px 16px;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.main-btn {
+  padding: 16px 24px;
+  font-size: 18px;
+  line-height: 28px;
+  @media screen and (max-width: 979px) {
+    font-size: 16px;
+  }
+}
+
 .primary-txt {
   font-family: Inter-Semibold;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 56px;
   line-height: 64px;
   letter-spacing: -3px;
+  @media screen and (max-width: 467px) {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 .heading-txt {
   font-family: Inter-Semibold;
   font-size: 40px;
   line-height: 48px;
   letter-spacing: -2px;
+  @media screen and (max-width: 467px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
 }
 
 .basic-txt {
@@ -84,22 +114,32 @@ $basicGrey: #8d9ba4;
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0px;
+  @media screen and (max-width: 979px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 
 .extra-txt {
   font-family: Inter-Regular;
-  color: $basicGrey;
   font-size: 14px;
+  color: $basicGrey;
 }
 
 .container {
   max-width: 1136px;
+  @media screen and (min-width: 980px) and (max-width: 1267px) {
+    width: 940px;
+  }
+  @media screen and (max-width: 979px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 p,
 h1,
-h2,
-h3 {
+h2 {
   @include cleanMargin();
 }
 
@@ -118,18 +158,9 @@ body {
   background-color: $basicWhite;
 
   &-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexSpaceBetween;
     margin: 0 auto;
     height: 100%;
-    @media screen and (max-width: 979px) {
-      padding-left: 25px;
-      padding-right: 25px;
-    }
-    @media screen and (min-width: 980px) and (max-width: 1267px) {
-      width: 940px;
-    }
   }
 
   &__logo {
@@ -138,10 +169,6 @@ body {
   }
 
   &__button {
-    padding: 10px 16px;
-    font-size: 14px;
-    line-height: 20px;
-    text-transform: uppercase;
     &:first-child {
       margin-right: 40px;
     }
@@ -159,16 +186,11 @@ body {
   }
 }
 
-// need edit:
 .mobile-menu {
   margin: 10px 20px 10px 20px;
   background-color: $basicWhite;
 
-  .menu-btn {
-    padding: 10px 16px;
-    font-size: 14px;
-    line-height: 20px;
-    text-transform: uppercase;
+  button {
     width: 100%;
   }
 }
@@ -176,6 +198,7 @@ body {
 .initial {
   background-image: linear-gradient(180deg, $backgroundYellow, $basicWhite);
   display: flex;
+
   @media screen and (max-width: 979px) {
     padding-top: 100px;
     padding-bottom: 100px;
@@ -185,17 +208,9 @@ body {
   }
 
   &__content-wrapper {
-    display: flex;
+    @include flexSpaceBetween;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
     margin: 0 auto;
-    @media screen and (min-width: 980px) and (max-width: 1267px) {
-      width: 940px;
-    }
-    @media screen and (max-width: 979px) {
-      max-width: 688px;
-    }
   }
 
   &__content {
@@ -204,7 +219,7 @@ body {
       width: 460px;
     }
     @media screen and (max-width: 979px) {
-      width: 95%;
+      width: 100%;
       text-align: center;
       margin: 0 auto;
     }
@@ -216,40 +231,25 @@ body {
       width: 460px;
     }
     @media screen and (max-width: 979px) {
-      width: 70%;
+      width: 75%;
     }
     &-wrapper {
       @include flexCenter();
-      @media screen and (max-width: 979px) {
-        max-width: 688px;
-      }
     }
   }
 
-  &__text {
-    @media screen and (max-width: 467px) {
-      font-size: 40px;
-      line-height: 48px;
-    }
-    span {
-      position: relative;
-      z-index: 10;
-    }
+  &__text span {
+    position: relative;
+    z-index: 10;
   }
 
   &__button {
-    padding: 16px 24px;
-    font-size: 18px;
-    line-height: 28px;
     margin-top: 24px;
     margin-bottom: 16px;
     @media screen and (max-width: 467px) {
-      width: 95%;
+      width: 100%;
       margin-top: 10px;
       margin-bottom: 10px;
-    }
-    @media screen and (max-width: 979px) {
-      font-size: 16px;
     }
   }
 
@@ -262,56 +262,55 @@ body {
   }
 }
 
-.main {
+.central {
   background-image: $basicWhite;
   display: flex;
 
   &-wrapper {
     text-align: center;
     margin: 0 auto;
-    padding: 20px 112px 80px 112px;
-    @media screen and (max-width: 979px) {
-      width: 95%;
-    }
   }
 
   &__text {
     margin-bottom: 10px;
   }
 
-  &__steps-wrapper,
-  &__features-wrapper {
+  .steps-wrapper,
+  .features-wrapper {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     margin-top: 80px;
-    margin-bottom: 80px;
-    gap: 10px;
+    margin-bottom: 160px;
+    gap: 32px;
+    flex-direction: row;
+    @media screen and (max-width: 979px) {
+      flex-direction: column;
+    }
   }
 
-  &__step,
-  &__feature {
+  .step,
+  .feature {
     align-self: flex-start;
     flex-grow: 1;
-    width: 270px;
-    @media screen and (max-width: 1267px) {
-      width: 160px;
-    }
+    width: 240px;
     @media screen and (max-width: 979px) {
-      width: 116px;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 
   .number {
-    top: 4px;
-    border-radius: 40px;
     background-color: $primaryYellow;
+    font-family: Inter-Semibold;
+    font-size: 14px;
+    border-radius: 40px;
     width: 32px;
     height: 32px;
-    margin: 0 auto;
+    line-height: 32px;
+    margin: 20px auto;
   }
 }
 
-.test-block {
+footer {
   height: 1000px;
 }
