@@ -264,9 +264,9 @@ body {
 
 .central {
   background-image: $basicWhite;
-  display: flex;
 
-  &-wrapper {
+  .steps,
+  .features {
     text-align: center;
     margin: 0 auto;
   }
@@ -308,6 +308,27 @@ body {
     height: 32px;
     line-height: 32px;
     margin: 20px auto;
+  }
+}
+
+.examples {
+  .example {
+    &:first-child {
+      background-image: linear-gradient(
+        90deg,
+        $backgroundBlue 30%,
+        $basicWhite 30%
+      );
+    }
+    &:last-child {
+      background-image: linear-gradient(
+        90deg,
+        $basicWhite 70%,
+        $backgroundBlue 70%
+      );
+    }
+    height: 650px;
+    display: flex;
   }
 }
 

@@ -318,12 +318,10 @@ body {
 
 .central {
   background-image: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
-.central-wrapper {
+.central .steps,
+.central .features {
   text-align: center;
   margin: 0 auto;
 }
@@ -386,6 +384,23 @@ body {
   height: 32px;
   line-height: 32px;
   margin: 20px auto;
+}
+
+.examples .example {
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.examples .example:first-child {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, #f0f7ff), color-stop(30%, #ffffff));
+  background-image: linear-gradient(90deg, #f0f7ff 30%, #ffffff 30%);
+}
+
+.examples .example:last-child {
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(70%, #ffffff), color-stop(70%, #f0f7ff));
+  background-image: linear-gradient(90deg, #ffffff 70%, #f0f7ff 70%);
 }
 
 footer {
