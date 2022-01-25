@@ -7,6 +7,7 @@ $backgroundYellow: #fff8e7;
 $basicWhite: #ffffff;
 $basicBlack: #111111;
 $basicGrey: #8d9ba4;
+$boxShadow: rgba(0, 0, 0, 0.05);
 
 @font-face {
   font-family: Inter-Regular;
@@ -36,6 +37,11 @@ $basicGrey: #8d9ba4;
 
 @mixin cleanMargin {
   margin: 0;
+}
+
+@mixin basicPadding {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 @mixin basicButton {
@@ -215,15 +221,7 @@ body {
 .initial {
   background-image: linear-gradient(180deg, $backgroundYellow, $basicWhite);
   display: flex;
-
-  @media screen and (max-width: 979px) {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-  @media screen and (min-width: 980px) {
-    min-height: calc(100vh - 60px);
-  }
-
+  @include basicPadding();
   &__content-wrapper {
     @include flexSpaceBetween;
     flex-wrap: wrap;
@@ -269,36 +267,33 @@ body {
       margin-bottom: 10px;
     }
   }
+}
 
-  .text-marker {
-    position: absolute;
-    top: 85%;
-    right: -5%;
-    width: 120%;
-    z-index: -10;
-  }
+.text-marker {
+  position: absolute;
+  top: 85%;
+  right: -5%;
+  width: 120%;
+  z-index: -10;
 }
 
 .central {
   background-image: $basicWhite;
-
-  .steps,
-  .features {
-    text-align: center;
-    margin: 0 auto;
-  }
+}
+.steps,
+.features {
+  text-align: center;
+  margin: 0 auto;
+  @include basicPadding();
 
   &__text {
-    margin-top: 20px;
     margin-bottom: 10px;
   }
 
-  .steps__content-wrapper,
-  .features__content-wrapper {
+  &__content-wrapper {
     display: flex;
     align-items: center;
     margin-top: 80px;
-    margin-bottom: 100px;
     gap: 32px;
     flex-direction: row;
     @media screen and (max-width: 767px) {
@@ -306,8 +301,7 @@ body {
     }
   }
 
-  .steps__item,
-  .features__item {
+  &__item {
     align-self: flex-start;
     flex-grow: 1;
     width: 240px;
@@ -316,53 +310,83 @@ body {
       margin: 0 auto;
     }
   }
+}
 
-  .number {
-    background-color: $primaryYellow;
-    font-family: Inter-Semibold;
-    font-size: 14px;
-    border-radius: 40px;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
-    margin: 20px auto;
-  }
+.number {
+  background-color: $primaryYellow;
+  font-family: Inter-Semibold;
+  font-size: 14px;
+  border-radius: 40px;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  margin: 20px auto;
 }
 
 .examples {
   &__item {
-    &:nth-child(odd) {
-      background-image: linear-gradient(
-        90deg,
-        $backgroundBlue 30%,
-        $basicWhite 30%
-      );
-    }
-    &:nth-child(even) {
-      background-image: linear-gradient(
-        90deg,
-        $basicWhite 70%,
-        $backgroundBlue 70%
-      );
-    }
     height: 611px;
     display: flex;
+    @media screen and (max-width: 979px) {
+      @include basicPadding();
+    }
+    @media screen and (min-width: 980px) {
+      &:nth-child(odd) {
+        background-image: linear-gradient(
+          90deg,
+          $backgroundBlue 30%,
+          $basicWhite 30%
+        );
+      }
+      &:nth-child(even) {
+        background-image: linear-gradient(
+          90deg,
+          $basicWhite 70%,
+          $backgroundBlue 70%
+        );
+      }
+    }
   }
+
   &__content-wrapper {
     @include flexSpaceBetween;
     flex-wrap: wrap;
     margin: 0 auto;
-    div:first-child {
-      margin-right: 112px;
+    @media screen and (min-width: 1267px) {
+      div:first-child {
+        margin-right: 112px;
+      }
+    }
+  }
+  &__content {
+    width: 560px;
+    @media screen and (max-width: 1267px) and (min-width: 980px) {
+      width: 460px;
+    }
+    @media screen and (max-width: 979px) {
+      width: 100%;
+      text-align: center;
+      margin: 0 auto;
     }
   }
 
-  .example__text {
-    width: 560px;
+  &__text {
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
-  .example__image {
-    width: 464px;
-    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
+
+  &__image-wrapper {
+    @media screen and (min-width: 1268px) {
+      width: 464px;
+    }
+    @media screen and (max-width: 1267px) and (min-width: 980px) {
+      width: 380px;
+    }
+    @media screen and (max-width: 979px) {
+      max-width: 90%;
+    }
+    margin: 0 auto;
+    box-shadow: 0 20px 40px 0 $boxShadow;
   }
 }
 
