@@ -225,9 +225,7 @@ body {
   width: 100%;
 }
 
-.initial {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff8e7), to(#ffffff));
-  background-image: linear-gradient(180deg, #fff8e7, #ffffff);
+.initial, .final {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -235,7 +233,7 @@ body {
   padding-bottom: 100px;
 }
 
-.initial__content-wrapper {
+.initial__content-wrapper, .final__content-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,41 +248,41 @@ body {
   margin: 0 auto;
 }
 
-.initial__content {
+.initial__content, .final__content {
   width: 560px;
 }
 
 @media screen and (max-width: 1267px) {
-  .initial__content {
+  .initial__content, .final__content {
     width: 460px;
   }
 }
 
 @media screen and (max-width: 979px) {
-  .initial__content {
+  .initial__content, .final__content {
     width: 100%;
     text-align: center;
     margin: 0 auto;
   }
 }
 
-.initial__image {
+.initial__image, .final__image {
   width: 560px;
 }
 
 @media screen and (max-width: 1267px) {
-  .initial__image {
+  .initial__image, .final__image {
     width: 460px;
   }
 }
 
 @media screen and (max-width: 979px) {
-  .initial__image {
+  .initial__image, .final__image {
     width: 75%;
   }
 }
 
-.initial__image-wrapper {
+.initial__image-wrapper, .final__image-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -296,22 +294,40 @@ body {
           align-items: center;
 }
 
-.initial__text span {
+.initial__text span, .final__text span {
   position: relative;
   z-index: 10;
 }
 
-.initial__button {
+.initial__button, .final__button {
   margin-top: 24px;
   margin-bottom: 16px;
 }
 
 @media screen and (max-width: 467px) {
-  .initial__button {
+  .initial__button, .final__button {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
   }
+}
+
+.initial {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff8e7), to(#ffffff));
+  background-image: linear-gradient(180deg, #fff8e7, #ffffff);
+}
+
+.final {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#fff8e7), to(#ffffff));
+  background-image: linear-gradient(0deg, #fff8e7, #ffffff);
+}
+
+.final__text {
+  margin-bottom: 28px;
+}
+
+.final__button {
+  margin-top: 10;
 }
 
 .text-marker {
@@ -488,6 +504,7 @@ body {
 }
 
 footer {
-  height: 1000px;
+  height: 80px;
+  background-color: #fff8e7;
 }
 /*# sourceMappingURL=style.css.map */

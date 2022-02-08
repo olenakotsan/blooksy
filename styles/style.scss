@@ -218,8 +218,7 @@ body {
   }
 }
 
-.initial {
-  background-image: linear-gradient(180deg, $backgroundYellow, $basicWhite);
+.initial, .final {
   display: flex;
   @include basicPadding();
   &__content-wrapper {
@@ -266,6 +265,19 @@ body {
       margin-top: 10px;
       margin-bottom: 10px;
     }
+  }
+}
+
+.initial{
+  background-image: linear-gradient(180deg, $backgroundYellow, $basicWhite);
+}
+.final{
+  background-image: linear-gradient(0deg, $backgroundYellow, $basicWhite);
+  &__text {
+    margin-bottom: 28px;
+  }
+  &__button{
+    margin-top: 10;
   }
 }
 
@@ -391,5 +403,6 @@ body {
 }
 
 footer {
-  height: 1000px;
+  height: 80px;
+  background-color: $backgroundYellow;
 }
