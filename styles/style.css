@@ -225,7 +225,8 @@ body {
   width: 100%;
 }
 
-.initial, .final {
+.initial,
+.final {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -233,7 +234,8 @@ body {
   padding-bottom: 100px;
 }
 
-.initial__content-wrapper, .final__content-wrapper {
+.initial__content-wrapper,
+.final__content-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,64 +250,36 @@ body {
   margin: 0 auto;
 }
 
-.initial__content, .final__content {
-  width: 560px;
-}
-
-@media screen and (max-width: 1267px) {
-  .initial__content, .final__content {
-    width: 460px;
+@media screen and (min-width: 980px) {
+  .initial__content,
+  .final__content {
+    width: 50%;
   }
 }
 
 @media screen and (max-width: 979px) {
-  .initial__content, .final__content {
+  .initial__content,
+  .final__content {
     width: 100%;
     text-align: center;
-    margin: 0 auto;
   }
 }
 
-.initial__image, .final__image {
-  width: 560px;
-}
-
-@media screen and (max-width: 1267px) {
-  .initial__image, .final__image {
-    width: 460px;
-  }
-}
-
-@media screen and (max-width: 979px) {
-  .initial__image, .final__image {
-    width: 75%;
-  }
-}
-
-.initial__image-wrapper, .final__image-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.initial__text span, .final__text span {
+.initial__text span,
+.final__text span {
   position: relative;
   z-index: 10;
 }
 
-.initial__button, .final__button {
+.initial__button,
+.final__button {
   margin-top: 24px;
   margin-bottom: 16px;
 }
 
 @media screen and (max-width: 467px) {
-  .initial__button, .final__button {
+  .initial__button,
+  .final__button {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -317,17 +291,56 @@ body {
   background-image: linear-gradient(180deg, #fff8e7, #ffffff);
 }
 
+@media screen and (min-width: 980px) {
+  .initial__image-wrapper {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .initial__image-wrapper {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
 .final {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#fff8e7), to(#ffffff));
   background-image: linear-gradient(0deg, #fff8e7, #ffffff);
 }
 
 .final__text {
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
 
-.final__button {
-  margin-top: 10px;
+@media screen and (max-width: 979px) {
+  .final__button {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .final__image-wrapper {
+    width: 40%;
+    margin-top: -200px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .final__image-wrapper {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+.empty {
+  height: 150px;
+}
+
+@media screen and (max-width: 979px) {
+  .empty {
+    display: none;
+  }
 }
 
 .text-marker {
@@ -450,19 +463,9 @@ body {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 1267px) {
-  .examples__content-wrapper div:first-child {
-    margin-right: 112px;
-  }
-}
-
-.examples__content {
-  width: 560px;
-}
-
-@media screen and (max-width: 1267px) and (min-width: 980px) {
+@media screen and (min-width: 980px) {
   .examples__content {
-    width: 460px;
+    width: 50%;
   }
 }
 
@@ -470,7 +473,6 @@ body {
   .examples__content {
     width: 100%;
     text-align: center;
-    margin: 0 auto;
   }
 }
 
@@ -480,30 +482,31 @@ body {
 }
 
 .examples__image-wrapper {
-  margin: 0 auto;
   -webkit-box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
           box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.05);
 }
 
-@media screen and (min-width: 1268px) {
+@media screen and (min-width: 980px) {
   .examples__image-wrapper {
-    width: 464px;
+    width: 40%;
   }
 }
 
-@media screen and (max-width: 1267px) and (min-width: 980px) {
+@media screen and (max-width: 979px) and (min-width: 768px) {
   .examples__image-wrapper {
-    width: 380px;
+    max-width: 60%;
+    margin: 0 auto;
   }
 }
 
-@media screen and (max-width: 979px) {
+@media screen and (max-width: 767px) {
   .examples__image-wrapper {
-    max-width: 90%;
+    max-width: 80%;
+    margin: 0 auto;
   }
 }
 
-footer {
+.footer {
   height: 80px;
   background-color: #fff8e7;
 }
