@@ -12,25 +12,15 @@ $boxShadow: rgba(0, 0, 0, 0.05);
 @font-face {
   font-family: Inter-Regular;
   font-weight: 400;
-<<<<<<< HEAD
   src: url(../fonts/Inter-Regular.woff2) format("woff2"),
     url(../fonts/Inter-Regular.woff) format("woff");
-=======
-  src: url(./fonts/Inter-Regular.woff2) format("woff2"),
-    url(./fonts/Inter-Regular.woff) format("woff");
->>>>>>> 914ca4fb9581000c83c01a05120decbc8c77d330
 }
 
 @font-face {
   font-family: Inter-Semibold;
   font-weight: 600;
-<<<<<<< HEAD
   src: url(../fonts/Inter-SemiBold.woff2) format("woff2"),
     url(../fonts/Inter-SemiBold.woff) format("woff");
-=======
-  src: url(./fonts/Inter-SemiBold.woff2) format("woff2"),
-    url(./fonts/Inter-SemiBold.woff) format("woff");
->>>>>>> 914ca4fb9581000c83c01a05120decbc8c77d330
 }
 
 @mixin flexCenter {
