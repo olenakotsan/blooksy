@@ -1,13 +1,13 @@
 @font-face {
   font-family: Inter-Regular;
   font-weight: 400;
-  src: url(/fonts/Inter-Regular.woff2) format("woff2"), url(/fonts/Inter-Regular.woff) format("woff");
+  src: url(../fonts/Inter-Regular.woff2) format("woff2"), url(../fonts/Inter-Regular.woff) format("woff");
 }
 
 @font-face {
   font-family: Inter-Semibold;
   font-weight: 600;
-  src: url(/fonts/Inter-SemiBold.woff2) format("woff2"), url(/fonts/Inter-SemiBold.woff) format("woff");
+  src: url(../fonts/Inter-SemiBold.woff2) format("woff2"), url(../fonts/Inter-SemiBold.woff) format("woff");
 }
 
 .transparent-btn {
@@ -508,6 +508,58 @@ body {
 
 .footer {
   height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #fff8e7;
+}
+
+@media screen and (max-width: 467px) {
+  .footer {
+    height: 100px;
+  }
+}
+
+.footer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  height: 100%;
+}
+
+@media screen and (max-width: 979px) {
+  .footer-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  .footer__button:first-child {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 979px) and (min-width: 468px) {
+  .footer__button:first-child {
+    margin-right: 30px;
+  }
+}
+
+@media screen and (max-width: 467px) {
+  .footer__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */

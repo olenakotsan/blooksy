@@ -419,5 +419,36 @@ body {
 
 .footer {
   height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: $backgroundYellow;
+  @media screen and (max-width: 467px) {
+    height: 100px;
+  }
+
+  &-wrapper {
+    @include flexSpaceBetween;
+    margin: 0 auto;
+    height: 100%;
+    @media screen and (max-width: 979px) {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    @media screen and (min-width: 980px) {
+      &:first-child {
+        margin-right: 40px;
+      }
+    }
+    @media screen and (max-width: 979px) and (min-width: 468px) {
+      &:first-child {
+        margin-right: 30px;
+      }
+    }
+    @media screen and (max-width: 467px) {
+      display: flex;
+      margin: 0 auto;
+    }
+  }
 }
