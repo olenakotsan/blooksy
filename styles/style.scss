@@ -222,7 +222,6 @@ body {
 .initial,
 .final {
   display: flex;
-  @include basicPadding();
   &__content-wrapper {
     @include flexSpaceBetween;
     flex-wrap: wrap;
@@ -256,6 +255,7 @@ body {
 }
 
 .initial {
+  @include basicPadding();
   background-image: linear-gradient(180deg, $backgroundYellow, $basicWhite);
 
   &__image-wrapper {
@@ -269,7 +269,16 @@ body {
   }
 }
 .final {
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-image: linear-gradient(0deg, $backgroundYellow, $basicWhite);
+
+  &__content {
+    padding-bottom: 50px;
+    &-wrapper {
+      align-items: flex-end;
+    }
+  }
 
   &__text {
     margin-bottom: 24px;
@@ -284,19 +293,11 @@ body {
   &__image-wrapper {
     @media screen and (min-width: 980px) {
       width: 40%;
-      margin-top: -200px;
     }
     @media screen and (max-width: 979px) {
       width: 75%;
       margin: 0 auto;
     }
-  }
-}
-
-.empty {
-  height: 150px;
-  @media screen and (max-width: 979px) {
-    display: none;
   }
 }
 
